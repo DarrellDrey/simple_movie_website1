@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie App</title>
+  </head>
+  <body>
+    <h1>Welcome to the Movie App!</h1>
+    <p>
+      Explore our collection of movies, add new ones, and manage your movie
+      database.
+    </p>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('add_movie') }}">Add a Movie</a></li>
+      </ul>
+    </nav>
+    <h2>Movies List</h2>
+    <ul>
+      {% for movie in movies %}
+      <li>{{ movie.title }} ({{ movie.year }})</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
